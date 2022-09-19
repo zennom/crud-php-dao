@@ -1,0 +1,6 @@
+# CRUD - DAO PHP
+
+Crud feito em PHP utilizando o método DAO (Data Acess Object)
+
+O padrão DAO tem como principal propósito abstrair o acesso a fonte de dados da sua aplicação (geralmente um banco de dados como Postgresql, Mysql, Mongodb, etc) das partes que utilizam ou provém estes dados. O problema que ele tenta resolver é o de que a fonte dos seus dados podem mudar, pode ser por exemplo, que você atualmente possua uma aplicação em produção feita em cima de Mongodb, contudo acabou de descobrir que o Mongogb possui certos problemas de consistência de dados que você não pode tolerar, e resolveu migrar para um banco que dê garantias maiores de integridade, e neste cenário caso suas funções de acesso ao banco estejam misturadas com partes da lógica de seu código (como as regra de negócio por exemplo) você seria obrigado a refazer, o que é um problema pois dado que seu código esteja estável você não quer ficar fazendo alterações que possam fazer com que ele venha a quebrar. 
+Caso você tenha uma camada DAO separada da sua camada lógica a alteração da fonte de dados se torna simplesmente uma questão de criar uma nova interface de acesso para a nova fonte, mantendo suas regras de negócio intocadas.
